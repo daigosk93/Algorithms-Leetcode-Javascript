@@ -1,9 +1,11 @@
-const assert = require('assert');
-var TreeNode = require('../../UtilsClasses/TreeNode').TreeNode;
-const lowestCommonAncestor = require('../../LeetcodeProblems/Algorithms/Lowest_Common_Ancestor_of_a_Binary_Tree').lowestCommonAncestor;
-const lowestCommonAncestor2 = require('../../LeetcodeProblems/Algorithms/Lowest_Common_Ancestor_of_a_Binary_Tree').lowestCommonAncestor2;
+const assert = require("assert");
+var TreeNode = require("../../UtilsClasses/TreeNode").TreeNode;
+const lowestCommonAncestor =
+  require("../../LeetcodeProblems/Algorithms/Lowest_Common_Ancestor_of_a_Binary_Tree").lowestCommonAncestor;
+const lowestCommonAncestor2 =
+  require("../../LeetcodeProblems/Algorithms/Lowest_Common_Ancestor_of_a_Binary_Tree").lowestCommonAncestor2;
 
-var test = function() {
+var test = function () {
   var root = new TreeNode(3);
 
   var right = new TreeNode(1);
@@ -13,7 +15,7 @@ var test = function() {
 
   var left = new TreeNode(5);
   left.left = new TreeNode(6);
-  
+
   var tempRight = new TreeNode(2);
   tempRight.left = new TreeNode(7);
   tempRight.right = new TreeNode(4);
@@ -34,6 +36,6 @@ var test = function() {
 
   console.log(lowestCommonAncestor2(root, left, tempRight.right));
   console.log(lowestCommonAncestor2(root, left, right));
-}
+};
 
 module.exports.test = test;

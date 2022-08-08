@@ -22,24 +22,20 @@ Note: You should have a better solution than O(N)
  * @param {number[]} nums
  * @return {number}
  */
-var majorityElement = function (nums) {
-  if (nums.length === 0) return -1;
 
-  var candidate = nums[0];
-  var proves = 1;
+const majorityElement = function (nums) {
+  const length = nums.length;
 
-  for (var i = 1; i < nums.length; i++) {
-    if (nums[i] === candidate) proves++;
-    else {
-      proves--;
-      if (proves === 0) {
-        candidate = nums[i];
-        proves = 1;
+  for (let num of nums) {
+    let quantity = 0;
+    for (let i = 0; i < nums.length; i++) {
+      if (nums[i] === num) {
+        quantity++;
       }
     }
+    if (quantity > length / 2) return num;
+    quantity = 0;
   }
-
-  return candidate;
 };
 
 module.exports.majorityElement = majorityElement;

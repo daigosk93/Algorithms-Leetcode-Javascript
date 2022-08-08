@@ -1,5 +1,5 @@
-var test = function() {
+var test = function () {
   // TODO
-}
+};
 
 module.exports.test = test;

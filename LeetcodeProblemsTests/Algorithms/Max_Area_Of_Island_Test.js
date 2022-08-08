@@ -1,17 +1,19 @@
-const assert = require('assert');
-const { maxAreaOfIsland } = require('../../LeetcodeProblems/Algorithms/Max_Area_Of_Island');
+const assert = require("assert");
+const {
+  maxAreaOfIsland,
+} = require("../../LeetcodeProblems/Algorithms/Max_Area_Of_Island");
 
 function test1() {
   var matrix = [
-    [0,0,1,0,0,0,0,1,0,0,0,0,0],
-    [0,0,0,0,0,0,0,1,1,1,0,0,0],
-    [0,1,1,0,1,0,0,0,0,0,0,0,0],
-    [0,1,0,0,1,1,0,0,1,0,1,0,0],
-    [0,1,0,0,1,1,0,0,1,1,1,0,0],
-    [0,0,0,0,0,0,0,0,0,0,1,0,0],
-    [0,0,0,0,0,0,0,1,1,1,0,0,0],
-    [0,0,0,0,0,0,0,1,1,0,0,0,0]
-  ]
+    [0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0],
+    [0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0],
+    [0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0],
+  ];
 
   assert.strictEqual(maxAreaOfIsland(matrix), 6);
 }
@@ -24,7 +26,7 @@ function test2() {
     [0, 1, 0, 0, 1],
     [0, 1, 1, 0, 1],
     [0, 0, 0, 0, 0],
-  ]
+  ];
 
   assert.strictEqual(maxAreaOfIsland(matrix), 5);
 }
@@ -37,7 +39,7 @@ function test3() {
     [0, 1, 1, 1, 1],
     [0, 0, 1, 0, 0],
     [0, 0, 0, 0, 0],
-  ]
+  ];
 
   assert.strictEqual(maxAreaOfIsland(matrix), 11);
 }
@@ -48,4 +50,4 @@ function test() {
   test3();
 }
 
-module.exports.test = test
+module.exports.test = test;
