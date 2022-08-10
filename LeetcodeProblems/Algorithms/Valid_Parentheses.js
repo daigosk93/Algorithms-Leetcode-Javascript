@@ -31,29 +31,27 @@ Example 5:
 Input: "{[]}"
 Output: true
 */
-
-var isValid = function (s) {
-  var stack = [];
-  for (var i = 0; i < s.length; i++) {
-    var elem = s.charAt(i);
-    if (elem === ")" || elem === "]" || elem === "}") {
-      if (stack.length === 0) return false;
-      var lasPar = stack.shift();
-      if (!valid(lasPar, elem)) return false;
-    } else {
-      stack.unshift(elem);
-    }
+const closeParenthesesCaracter = {
+  "(": ")",
+  "{": "}",
+  "[": "]"
+};
+const isValid = (parentheses) => {
+  if (parentheses === "") {
+    return true;
+  }
+  if (parentheses.length % 2 !== 0) return false;
+  if (parentheses.length === 2) {
+    return closeParenthesesCaracter[`${parentheses[0]}`] === parentheses[1];
   }
 
-  return stack.length === 0;
-};
+  let firstParentheses = parentheses[0];
+  let closeParentheses = parentheses.indexOf(closeParenthesesCaracter[firstParentheses]);
 
-var valid = function (parOpen, parClose) {
-  return (
-    (parOpen === "(" && parClose === ")") ||
-    (parOpen === "[" && parClose === "]") ||
-    (parOpen === "{" && parClose === "}")
-  );
-};
+  if (closeParentheses === -1 || closeParentheses % 2 === 0) return false;
 
+  let nextParentheses = parentheses.slice(1, closeParentheses) + parentheses.slice(closeParentheses + 1);
+  return isValid(nextParentheses);
+
+};
 module.exports.isValid = isValid;
