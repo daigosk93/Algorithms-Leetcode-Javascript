@@ -3,6 +3,8 @@
     <JSCodeStyleSettings version="0">
       <option name="FORCE_SEMICOLON_STYLE" value="true" />
       <option name="FORCE_QUOTE_STYlE" value="true" />
+      <option name="SPACE_AROUND_ARROW_FUNCTION_OPERATOR" value="false" />
+      <option name="SPACE_BEFORE_UNARY_NOT" value="true" />
     </JSCodeStyleSettings>
     <codeStyleSettings language="JavaScript">
       <option name="INDENT_CASE_FROM_SWITCH" value="false" />
@@ -11,6 +13,7 @@
       <indentOptions>
         <option name="INDENT_SIZE" value="2" />
         <option name="CONTINUATION_INDENT_SIZE" value="2" />
+        <option name="USE_TAB_CHARACTER" value="true" />
       </indentOptions>
     </codeStyleSettings>
   </code_scheme>
