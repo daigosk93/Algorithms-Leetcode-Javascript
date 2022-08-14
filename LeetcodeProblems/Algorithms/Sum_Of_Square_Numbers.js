@@ -18,18 +18,19 @@ Output: False
  * @param {number} c
  * @return {boolean}
  */
-var judgeSquareSum = function (c) {
-  var iter = 0;
-  var set = new Set();
-  while (iter ** 2 <= c) {
-    var square = iter * iter;
-    if (square * 2 === c || set.has(c - square)) return true;
-
-    set.add(square);
-    iter++;
+const judgeSquareSum = (c) => {
+  let maxValue = Math.pow(c, 1 / 2);
+  for (let i = 0; i <= maxValue; i++) {
+    for (let j = i; j <= maxValue; j++) {
+      const result = (i * i) + (j * j);
+      if (result === c) {
+        console.log(i, j);
+        return true;
+      }
+    }
   }
-
   return false;
+
 };
 
 module.exports.judgeSquareSum = judgeSquareSum;

@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="081e4583-e9ab-463a-970e-295c3453bc7c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/LeetcodeProblems/Algorithms/Valid_Parentheses.js" beforeDir="false" afterPath="$PROJECT_DIR$/LeetcodeProblems/Algorithms/Valid_Parentheses.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeetcodeProblemsTests/Algorithms/Valid_Parentheses_Test.js" beforeDir="false" afterPath="$PROJECT_DIR$/LeetcodeProblemsTests/Algorithms/Valid_Parentheses_Test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeetcodeProblems/Algorithms/Sum_Of_Square_Numbers.js" beforeDir="false" afterPath="$PROJECT_DIR$/LeetcodeProblems/Algorithms/Sum_Of_Square_Numbers.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +76,8 @@
       <workItem from="1660124390448" duration="317000" />
       <workItem from="1660124714156" duration="2879000" />
       <workItem from="1660127601707" duration="2858000" />
+      <workItem from="1660156502537" duration="2368000" />
+      <workItem from="1660469055566" duration="1106000" />
     </task>
     <servers />
   </component>
