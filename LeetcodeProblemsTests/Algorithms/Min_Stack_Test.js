@@ -1,5 +1,5 @@
-const assert = require('assert');
-const MinStack = require('../../LeetcodeProblems/Algorithms/Min_Stack').MinStack;
+const assert = require("assert");
+const MinStack = require("../../LeetcodeProblems/Algorithms/Min_Stack").MinStack;
 
 function test() {
   var minStack = new MinStack();
@@ -8,6 +8,8 @@ function test() {
   minStack.push(-3);
   assert.equal(minStack.getMin(), -3);
   assert.equal(minStack.pop(), -3);
+  console.log(minStack.getStack());
+
   assert.equal(minStack.top(), 0);
   assert.equal(minStack.getMin(), -2);
 }

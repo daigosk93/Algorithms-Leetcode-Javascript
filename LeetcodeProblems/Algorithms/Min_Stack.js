@@ -19,51 +19,45 @@ minStack.pop();
 minStack.top();      --> Returns 0.
 minStack.getMin();   --> Returns -2.
 */
-
 class MinStack {
   constructor() {
-    this.minStack = [];
     this.stack = [];
-    this.countStack = 0;
-    this.countMinStack = 0;
   }
 
   push(value) {
-    if (this.countStack === this.stack.length) this.stack.push(value);
-    else this.stack[this.countStack] = value;
-    this.countStack++;
-
-    const min = this.getMin();
-    if (min === null || min >= value) {
-      if (this.countMinStack === this.minStack.length)
-        this.minStack.push(value);
-      else this.minStack[this.countMinStack] = value;
-      this.countMinStack++;
-    }
+    const length = this.stack.length;
+    this.stack[length] = value;
   }
 
-  pop() {
-    if (this.countStack === 0) return null;
-
-    var elem = this.stack[this.countStack - 1];
-    this.countStack--;
-
-    if (elem === this.minStack[this.countMinStack - 1]) this.countMinStack--;
-
-    return elem;
-  }
-
-  top() {
-    if (this.countStack === 0) return null;
-
-    return this.stack[this.countStack - 1];
+  getStack() {
+    return this.stack;
   }
 
   getMin() {
-    if (this.countMinStack === 0) return null;
-
-    return this.minStack[this.countMinStack - 1];
+    let min = this.stack[0];
+    for (let value of this.stack) {
+      min = min > value ? value : min;
+    }
+    return min;
   }
+
+  pop() {
+    const newStack = [];
+    const length = this.stack.length;
+    const number = this.stack[length - 1];
+    for (let i = 0; i < length - 1; i++) {
+      newStack[i] = this.stack[i];
+    }
+    this.stack = newStack;
+    return number;
+  }
+
+  top() {
+    const length = this.stack.length;
+    const number = this.stack[length - 1];
+    return number;
+  }
+
 }
 
 module.exports.MinStack = MinStack;
