@@ -9,31 +9,38 @@ Output: "bacdfeg"
 Restrictions:
 The string consists of lower English letters only.
 Length of the given string and k will in the range [1, 10000]
+
 */
 
-var reverseStr = function (s, k) {
-  if (k <= 1) return s;
-  var ret = "";
-  for (var iterK = 0; iterK * k < s.length; iterK = iterK + 2) {
-    const start = iterK * k;
-    const end = start + k - 1;
+/*
+const reverseStr = (s, k) => {
+  let loops = s.length / k;
+  let firstHalf = s.slice(0, k);
+  let secondHalf = s.slice(k, s.length);
+  let newFirstHalf = "";
 
-    ret += reverse(s, start, end);
-    ret += s.slice(end + 1, k * (iterK + 2));
+  for (let i = (k - 1); i >= 0; i--) {
+    newFirstHalf = newFirstHalf + firstHalf.charAt(i);
+  }
+  return newFirstHalf + secondHalf;
+
+};
+*/
+
+const reverseStr = (s, k) => {
+  if (s === "") return "";
+  if (k === 0) return s;
+  let firstHalf = s.slice(0, 2 * k);
+  let secondHalf = s.slice(2 * k, s.length);
+  let kFirstHalf = "";
+
+  for (let i = (k - 1); i >= 0; i--) {
+    kFirstHalf = kFirstHalf + firstHalf.charAt(i);
   }
 
-  return ret;
+  const phrase = kFirstHalf + firstHalf.slice(k, firstHalf.length) + reverseStr(secondHalf, k);
+  return phrase;
 };
 
-var reverse = function (s, start, end) {
-  var ret = "";
-  if (end >= s.length) end = s.length - 1;
-
-  while (start <= end) {
-    ret += s.charAt(end);
-    end--;
-  }
-  return ret;
-};
 
 module.exports.reverseStr = reverseStr;
