@@ -14,21 +14,31 @@ Follow up:
 
 */
 
-var maxSubArray = function (nums) {
-  if (nums.length == 0) return 0;
-  var maxSub = nums[0];
-  var currentMax = nums[0];
+const maxSubArray = (nums) => {
+  const numsQuantity = nums.length;
 
-  for (var i = 1; i < nums.length; i++) {
-    currentMax = max(nums[i], currentMax + nums[i]);
-    if (currentMax > maxSub) maxSub = currentMax;
+  if (numsQuantity === 0) return 0;
+  if (numsQuantity === 1) return nums[0];
+  let amount = nums[0];
+  for (let i = 0; i < numsQuantity; i++) {
+    for (let j = i + 1; j < numsQuantity; j++) {
+      let result = sum(i, j, nums);
+      if (result > amount) {
+        amount = result;
+      }
+    }
   }
 
-  return maxSub;
+  return amount;
 };
 
-var max = function (i, j) {
-  return i > j ? i : j;
+const sum = (start, finish, nums) => {
+  let sum = 0;
+  for (let i = start; i <= finish; i++) {
+    sum = nums[i] + sum;
+  }
+  return sum;
+
 };
 
 module.exports.maxSubArray = maxSubArray;
