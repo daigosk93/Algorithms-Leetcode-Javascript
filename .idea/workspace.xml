@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="081e4583-e9ab-463a-970e-295c3453bc7c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeetcodeProblems/Algorithms/Maximun_Subarray.js" beforeDir="false" afterPath="$PROJECT_DIR$/LeetcodeProblems/Algorithms/Maximun_Subarray.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeetcodeProblems/Algorithms/Permutations.js" beforeDir="false" afterPath="$PROJECT_DIR$/LeetcodeProblems/Algorithms/Permutations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeetcodeProblemsTests/Algorithms/Permutations_Test.js" beforeDir="false" afterPath="$PROJECT_DIR$/LeetcodeProblemsTests/Algorithms/Permutations_Test.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,5 +106,18 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <condition expression="set.has(4)" language="JavaScript" />
+          <url>file://$PROJECT_DIR$/LeetcodeProblems/Algorithms/Permutations.js</url>
+          <line>33</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
