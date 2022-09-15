@@ -28,25 +28,26 @@ The length of image and image[0] will be in the range [1, 50].
 The given starting pixel will satisfy 0 <= sr < image.length and 0 <= sc < image[0].length.
 The value of each color in image[i][j] and newColor will be an integer in [0, 65535].
 */
+const canMoveUP = (image, sr, sc, previousColor) =>
+  0 <= sc - 1 && sc - 1 < image[0].length && previousColor === image[sr][sc - 1];
 
-var floodFill = function (image, sr, sc, newColor) {
-  var oldColor = image[sr][sc];
+const canMoveDown = (image, sr, sc, previousColor) =>
+  0 <= sc + 1 && sc + 1 < image[0].length && previousColor === image[sr][sc + 1];
 
-  if (newColor == oldColor) return image;
+const canMoveRight = (image, sr, sc, previousColor) =>
+  0 <= sr + 1 && sr + 1 < image[0].length && previousColor === image[sr + 1][sc];
 
+const canMoveLeft = (image, sr, sc, previousColor) =>
+  0 <= sr - 1 && sr - 1 < image[0].length && previousColor === image[sr - 1][sc];
+
+const floodFill = (image, sr, sc, newColor) => {
+  const previousColor = image[sr][sc];
   image[sr][sc] = newColor;
 
-  if (sr > 0 && image[sr - 1][sc] == oldColor)
-    floodFill(image, sr - 1, sc, newColor); //Left
-
-  if (sc > 0 && image[sr][sc - 1] == oldColor)
-    floodFill(image, sr, sc - 1, newColor); //Up
-
-  if (sr < image.length - 1 && image[sr + 1][sc] == oldColor)
-    floodFill(image, sr + 1, sc, newColor); //Down
-
-  if (sc < image[0].length - 1 && image[sr][sc + 1] == oldColor)
-    floodFill(image, sr, sc + 1, newColor); // Right
+  canMoveUP(image, sr, sc, previousColor) && floodFill(image, sr, sc - 1, newColor);
+  canMoveDown(image, sr, sc, previousColor) && floodFill(image, sr, sc + 1, newColor);
+  canMoveRight(image, sr, sc, previousColor) && floodFill(image, sr + 1, sc, newColor);
+  canMoveLeft(image, sr, sc, previousColor) && floodFill(image, sr - 1, sc, newColor);
 
   return image;
 };
